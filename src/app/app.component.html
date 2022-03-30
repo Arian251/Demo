@@ -1,0 +1,60 @@
+<mat-toolbar style="background-color: #67c793" class="nav-height">
+  <mat-toolbar-row>
+    <h1>Quản lý sinh viên</h1>
+    <span class="menu-spacer" style="width: 100px;" ></span>
+    <div>
+      <a
+        mat-button
+        [routerLink]="['/dashboard']"
+        [routerLinkActive]="'active-link'"
+      >
+        <mat-icon>school</mat-icon> Bảng điều khiển
+      </a>
+      <a
+        mat-button
+        [routerLink]="['/students']"
+        [routerLinkActive]="'active-link'"
+      >
+        <mat-icon>folder_shared</mat-icon>
+        <span
+          *ngIf="totalStudents >= 0"
+          matBadge="{{ totalStudents }}"
+          matBadgeColor="warn"
+          matBadgeSize="small"
+        >
+          Sinh Viên &nbsp;
+        </span>
+      </a>
+      <a
+        mat-button
+        [routerLink]="['/about']"
+        [routerLinkActive]="'active-link'"
+      >
+        <mat-icon>person</mat-icon> About
+      </a>
+    </div>
+    <div class="content-move-right">
+        <a
+          mat-button
+          [routerLink]="['/login-form']"
+          [routerLinkActive]="'active-link'"
+        >Login</a>
+        <a
+          mat-button
+          [routerLink]="['/signup-form']"
+          [routerLinkActive]="'active-link'"
+        >Sign-up
+        </a>
+    </div>
+  </mat-toolbar-row>
+  <!-- <mat-toolbar-row>
+    <span style="font-size: 12px;"
+      >Simple helps you easily manage your contacts</span
+    >
+  </mat-toolbar-row> -->
+</mat-toolbar>
+<mat-sidenav-container>
+
+      <router-outlet></router-outlet>
+
+</mat-sidenav-container>
